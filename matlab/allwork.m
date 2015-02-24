@@ -6,11 +6,15 @@ meta_data{2}.vocab='vocab_vec_wikipedia.txt';
 meta_data{2}.wordrep='glove_6B_300d.bin';
 meta_data{2}.dim = 300;
 
-meta_data{3}.vocab='vocab_400_50_10_wikipedia.txt';
-meta_data{3}.wordrep='word2vec_400_50_10_wikipedia.bin';
+meta_data{3}.vocab='vocab_400_10_10_wikipedia.txt';
+meta_data{3}.wordrep='word2vec_400_10_10.bin';
 meta_data{3}.dim = 400;
 
-idx = 1;
+meta_data{4}.vocab='vocab_400_10_5_wikipedia.txt';
+meta_data{4}.wordrep='word2vec_400_10_5.bin';
+meta_data{4}.dim = 400;
+
+idx = 2;
 
 % dump vocabulary from pre-trained words representation 
 system(['python ../python/dump_vocab.py ' meta_data{idx}.wordrep ' ' meta_data{idx}.vocab]);

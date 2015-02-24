@@ -4,8 +4,8 @@ function [] = experiments(vocab_name, version)
 
   addpath('liblinear-1.96/matlab');
 
-  train_d = diag(1./(sum(db.train_vec,2)+1E-6))* (db.train_vec) * db.vocab_mat(1:size(db.train_vec,2),:);
-  test_d  = diag(1./(sum(db.test_vec,2)+1E-6)) * (db.test_vec)  * db.vocab_mat(1:size(db.test_vec,2),:);
+  train_d = diag(1./(sum(db.train_vec>0,2)+1E-6))* (db.train_vec>0) * db.vocab_mat(1:size(db.train_vec,2),:);
+  test_d  = diag(1./(sum(db.test_vec>0,2)+1E-6)) * (db.test_vec>0)  * db.vocab_mat(1:size(db.test_vec,2),:);
 
   disp(['weighted average approach with dimension ', num2str(size(db.vocab_mat,2))]);fflush(stdout);
   classify(sparse(train_d), db.train_lab, sparse(test_d), db.test_lab);
