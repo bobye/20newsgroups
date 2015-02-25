@@ -70,5 +70,7 @@ Hlr = -sum( M(:) .* log2( M(:) + eps ) );
 MI = Hl + Hr - Hlr;
 
 % normalized mutual information
-v = sqrt((MI/Hl)*(MI/Hr)) ;
+v = MI/max(Hl, Hr);
+
+
 
