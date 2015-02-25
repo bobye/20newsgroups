@@ -37,15 +37,16 @@ label_unique = unique(label);
 result_unique = unique(result);
 
 % check the integrity of result
-if length(label_unique) ~= length(result_unique)
-    error('The clustering result is not consistent with label.');
-end;
+%if length(label_unique) ~= length(result_unique)
+%    error('The clustering result is not consistent with label.');
+%end;
 
-c = length(label_unique);
+cl = length(label_unique);
+cr = length(result_unique);
 
 % distribution of result and label
-Ml = double(repmat(label,1,c) == repmat(label_unique',n,1));
-Mr = double(repmat(result,1,c) == repmat(result_unique',n,1));
+Ml = double(repmat(label,1,cl) == repmat(label_unique',n,1));
+Mr = double(repmat(result,1,cr) == repmat(result_unique',n,1));
 Pl = sum(Ml)/n;
 Pr = sum(Mr)/n;
 
@@ -70,3 +71,4 @@ MI = Hl + Hr - Hlr;
 
 % normalized mutual information
 v = sqrt((MI/Hl)*(MI/Hr)) ;
+
