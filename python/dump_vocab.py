@@ -21,7 +21,7 @@ f.close()
 # get Word2Vec
 #model = models.Word2Vec.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
 #model = models.Word2Vec.load_word2vec_format('glove_6B_300d.bin', binary=True)
-model = models.Word2Vec.load_word2vec_format('../python/' + sys.argv[1], binary=True);
+model = models.Word2Vec.load_word2vec_format('../python/' + sys.argv[1], binary=True, norm_only=False);
 dimension=len(model['the']);
 
 filename='../vocab/' + sys.argv[2]
