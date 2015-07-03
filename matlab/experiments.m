@@ -18,9 +18,13 @@ function [] = experiments(vocab_name, version)
   disp('clustering ...');fflush(stdout);
 
   data=[train_d; test_d];
+%  data=[db.train_vec; db.test_vec];
+%  data=bsxfun(@rdivide, data', sqrt(sum(data.*data))')';
+%  data=full(data);
+%  [data, ~, ~] = svds(data, 300);
   labels=[db.train_lab; db.test_lab];
 
-#  macro_labels = [1, 2, 2, 2, 2, 2, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 7, 7, 7, 7];
+#  macro_labels = [1, 6, 6, 7, 7, 6, 9, 5, 5, 2, 2, 8, 7, 4, 5, 1, 4, 3, 4, 1];
 #  labels=macro_labels(labels);
 #  data=data(1:2000,:);
 #  labels=labels(1:2000);

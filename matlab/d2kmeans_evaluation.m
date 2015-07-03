@@ -1,6 +1,6 @@
 filename='../20newsgroups_clean/20newsgroups';
 ind=load([filename '.d2s.ind']);
-groups_byind=load([filename '.d2s_273167.label']);
+groups_byind=load([filename '.d2s_810644.label']);
 labels=load([filename '.label']);
 
 num_of_objects = length(ind);

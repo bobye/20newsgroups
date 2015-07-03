@@ -71,6 +71,6 @@ MI = Hl + Hr - Hlr;
 
 % normalized mutual information
 v = MI/sqrt(Hl*Hr);
-
+%v=MI/max(Hl,Hr);
 
 
