@@ -1,12 +1,6 @@
 filename='../20newsgroups_clean/20newsgroups';
-ind=load([filename '.d2s.ind']);
-groups_byind=load([filename '.d2s_810644.label']);
+groups=load([filename '.d2s_62308.label_o'])+1;
 labels=load([filename '.label']);
-
-num_of_objects = length(ind);
-groups=zeros(num_of_objects,1);
-groups(ind+1)=groups_byind+1;
-labels = labels(1:num_of_objects);
 
 ugrp_size=length(unique(groups));
 
